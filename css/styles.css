@@ -62,7 +62,8 @@
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
-  --bs-body-bg: #fff;
+  --bs-body-bg-light: #fff;
+  --bs-body-bg-dark: #343a40;
   --bs-border-width: 1px;
   --bs-border-style: solid;
   --bs-border-color: #dee2e6;
@@ -91,15 +92,35 @@
   }
 }
 
+.dark-mode {
+  --bs-body-bg-dark: #fff;
+  --bs-body-bg-light: #212529;
+}
+
+.theme-toggle {
+  position: absolute;
+  z-index: 100;
+  top: 1em;
+  right: 1em;
+  color: var(--bs-body-bg-dark);
+  border: 2px solid currentColor;
+  padding: 4px;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 38px;
+  height: 38px;
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
-  color: var(--bs-body-color);
+  color: var(--bs-body-bg-dark);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  background-color: var(--bs-body-bg-light);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -118,7 +139,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   line-height: 1.2;
-  color: #343a40;
+  color: var(--bs-body-bg-dark);
 }
 
 h1, .h1 {
@@ -292,7 +313,7 @@ a > code {
 kbd {
   padding: 0.1875rem 0.375rem;
   font-size: 0.875em;
-  color: var(--bs-body-bg);
+  color: var(--bs-body-bg-light);
   background-color: var(--bs-body-color);
   border-radius: 0.25rem;
 }
@@ -3748,6 +3769,8 @@ textarea.form-control-lg {
   --bs-navbar-toggler-border-radius: 0.375rem;
   --bs-navbar-toggler-focus-width: 0.25rem;
   --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+  --bs-theme-toggler-padding-y: 0.75rem;
+  --bs-theme-toggler-padding-x: 1.25rem;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -3828,6 +3851,8 @@ textarea.form-control-lg {
   border-radius: var(--bs-navbar-toggler-border-radius);
   transition: var(--bs-navbar-toggler-transition);
 }
+
+
 @media (prefers-reduced-motion: reduce) {
   .navbar-toggler {
     transition: none;
@@ -10828,7 +10853,7 @@ textarea.form-control-lg {
 }
 body {
   padding-top: 3.375rem;
-  color: #6c757d;
+  color: var(--bs-body-bg-dark);
 }
 
 @media (min-width: 992px) {
@@ -10981,3 +11006,13 @@ section.resume-section .resume-section-content {
     font-size: 2.5rem;
   }
 }
+
+/* Edit this for the mobile version of the dark mode toggle button
+*/
+/* @media (max-width: 992px) {
+  .theme-toggle{
+    position: static;
+    right: 11%;
+    top: 9px;
+  }
+} */
