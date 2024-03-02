@@ -11007,6 +11007,12 @@ section.resume-section .resume-section-content {
   }
 }
 
+@media (max-width: 992px) {
+  .theme-toggle{
+    display: none;
+  }
+}
+
 /* Edit this for the mobile version of the dark mode toggle button
 */
 /* @media (max-width: 992px) {
